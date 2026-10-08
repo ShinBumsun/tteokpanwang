@@ -32,6 +32,8 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Black+Han+Sans&display=swap">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+	<link rel="preload" as="image" href="./images/pic_hero_main.jpg" media="(min-width:769px)">
+	<link rel="preload" as="image" href="./images/pic_hero_main_m.jpg" media="(max-width:768px)">
 	<link rel="stylesheet" href="./css/init.css">
 	<link rel="stylesheet" href="./css/layout.css">
 
@@ -83,76 +85,10 @@
 		<section class="c_hero section" id="section01" aria-label="메인">
 			<div class="ch_visual" aria-hidden="true">
 				<div class="chv_steam"><i></i><i></i><i></i><i></i></div>
-				<!-- 일러스트(사진 아님): 실제 메뉴 사진 확보 시 교체 -->
-				<svg class="chv_pan" viewBox="0 0 600 600" role="img" aria-label="즉석떡볶이 한 판 일러스트">
-					<defs>
-						<radialGradient id="g_sauce" cx="45%" cy="40%" r="65%">
-							<stop offset="0" stop-color="#ff6a3a"/>
-							<stop offset="0.55" stop-color="#E92828"/>
-							<stop offset="1" stop-color="#7d0b0b"/>
-						</radialGradient>
-						<radialGradient id="g_rim" cx="50%" cy="50%" r="50%">
-							<stop offset="0.86" stop-color="#2b2b2b"/>
-							<stop offset="0.95" stop-color="#4a4a4a"/>
-							<stop offset="1" stop-color="#1a1a1a"/>
-						</radialGradient>
-						<g id="tk"><rect x="-38" y="-12" width="76" height="24" rx="12" fill="#fff4e2"/><rect x="-34" y="-9" width="68" height="7" rx="3.5" fill="#ffffff" opacity="0.8"/><rect x="-38" y="4" width="76" height="8" rx="4" fill="#e25a3c" opacity="0.55"/></g>
-						<g id="ck"><path d="M-46 -10 Q-23 -22 0 -10 T46 -10 L46 10 Q23 22 0 10 T-46 10 Z" fill="#c9786b"/><path d="M-40 -4 Q-20 -14 0 -4 T40 -4" stroke="#fbe6dc" stroke-width="4" fill="none"/><path d="M-40 6 Q-20 -2 0 6 T40 6" stroke="#fbe6dc" stroke-width="3" fill="none" opacity="0.8"/></g>
-						<g id="fc"><path d="M-30 -18 L32 -10 L18 20 L-26 14 Z" fill="#e9b26b"/><path d="M-22 -10 L24 -4" stroke="#f7d29b" stroke-width="3"/></g>
-						<g id="on"><circle r="8" fill="none" stroke="#3fa34d" stroke-width="4"/></g>
-					</defs>
-					<circle cx="300" cy="306" r="292" fill="#000" opacity="0.45"/>
-					<circle cx="300" cy="300" r="288" fill="url(#g_rim)"/>
-					<circle cx="300" cy="300" r="250" fill="url(#g_sauce)"/>
-					<!-- 양배추 -->
-					<g fill="#e6eeb8" opacity="0.9">
-						<path d="M160 210 q30 -30 70 -10 q-20 30 -70 10z"/>
-						<path d="M390 420 q40 -10 60 20 q-40 20 -60 -20z"/>
-						<path d="M170 400 q20 -40 60 -30 q-10 40 -60 30z"/>
-					</g>
-					<!-- 떡 -->
-					<use href="#tk" transform="translate(220 260) rotate(-24)"/>
-					<use href="#tk" transform="translate(300 230) rotate(12)"/>
-					<use href="#tk" transform="translate(390 280) rotate(-48)"/>
-					<use href="#tk" transform="translate(250 340) rotate(36)"/>
-					<use href="#tk" transform="translate(340 350) rotate(-8)"/>
-					<use href="#tk" transform="translate(190 330) rotate(80)"/>
-					<use href="#tk" transform="translate(420 360) rotate(20)"/>
-					<use href="#tk" transform="translate(300 430) rotate(-30)"/>
-					<use href="#tk" transform="translate(230 170) rotate(58)"/>
-					<use href="#tk" transform="translate(370 180) rotate(-70)"/>
-					<!-- 어묵 -->
-					<use href="#fc" transform="translate(150 270) rotate(30)"/>
-					<use href="#fc" transform="translate(440 220) rotate(-40)"/>
-					<use href="#fc" transform="translate(370 450) rotate(10)"/>
-					<!-- 차돌 -->
-					<use href="#ck" transform="translate(310 300) rotate(-18)"/>
-					<use href="#ck" transform="translate(240 410) rotate(22)"/>
-					<use href="#ck" transform="translate(420 310) rotate(70)"/>
-					<use href="#ck" transform="translate(300 150) rotate(4)"/>
-					<!-- 계란 -->
-					<g transform="translate(220 230)"><ellipse rx="30" ry="22" fill="#fffaf0"/><circle r="13" fill="#ffc531"/></g>
-					<g transform="translate(375 400) rotate(30)"><ellipse rx="30" ry="22" fill="#fffaf0"/><circle r="13" fill="#ffc531"/></g>
-					<!-- 대파 -->
-					<use href="#on" transform="translate(270 300)"/>
-					<use href="#on" transform="translate(350 260)"/>
-					<use href="#on" transform="translate(200 380)"/>
-					<use href="#on" transform="translate(410 250)"/>
-					<use href="#on" transform="translate(320 400)"/>
-					<use href="#on" transform="translate(260 200)"/>
-					<!-- 보글보글 -->
-					<g fill="#ff8a5c">
-						<circle cx="180" cy="300" r="6"><animate attributeName="r" values="2;9;0" dur="1.6s" repeatCount="indefinite"/></circle>
-						<circle cx="330" cy="200" r="6"><animate attributeName="r" values="0;7;2;0" dur="2.1s" repeatCount="indefinite"/></circle>
-						<circle cx="430" cy="330" r="6"><animate attributeName="r" values="3;10;0" dur="1.9s" repeatCount="indefinite"/></circle>
-						<circle cx="280" cy="380" r="6"><animate attributeName="r" values="0;8;0" dur="1.4s" repeatCount="indefinite"/></circle>
-						<circle cx="210" cy="440" r="6"><animate attributeName="r" values="2;6;0" dur="2.4s" repeatCount="indefinite"/></circle>
-						<circle cx="400" cy="160" r="6"><animate attributeName="r" values="0;9;1;0" dur="1.7s" repeatCount="indefinite"/></circle>
-					</g>
-					<!-- 손잡이 -->
-					<rect x="-6" y="282" width="20" height="36" rx="6" fill="#2b2b2b"/>
-					<rect x="586" y="282" width="20" height="36" rx="6" fill="#2b2b2b"/>
-				</svg>
+				<picture class="chv_photo">
+					<source media="(max-width:768px)" srcset="./images/pic_hero_main_m.jpg">
+					<img src="./images/pic_hero_main.jpg" alt="" fetchpriority="high" decoding="async">
+				</picture>
 			</div>
 			<div class="ch_inner">
 				<p class="ch_eyebrow font fade f_up"><mark>SEOUL</mark> INSTANT TTEOKBOKKI</p>

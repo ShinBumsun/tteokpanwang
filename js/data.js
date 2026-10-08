@@ -50,8 +50,8 @@ window.TPW_DATA = {
 
 	// 시그니처 메뉴 S (price: 숫자, priceNote: 가격 앞 설명, from: true 면 '~' 표시)
 	menu: [
-		{label: 'SIGNATURE', name: '차돌 즉석떡볶이', en: 'CHADOL TTEOKBOKKI', desc: '차돌이 양념에 녹아드는, 떡판왕의 대표 한 판. 2인부터 4인 세트까지.', priceNote: '2인 세트', price: 20000, from: true, image: ''},
-		{label: 'BEST', name: '기본 즉석떡볶이', en: 'CLASSIC TTEOKBOKKI', desc: '처음 온 날엔 이것부터. 떡판왕 양념 그대로의 맛.', priceNote: '2인 세트', price: 18000, from: true, image: ''},
+		{label: 'SIGNATURE', name: '차돌 즉석떡볶이', en: 'CHADOL TTEOKBOKKI', desc: '차돌이 양념에 녹아드는, 떡판왕의 대표 한 판. 2인부터 4인 세트까지.', priceNote: '2인 세트', price: 20000, from: true, image: 'images/pic_menu_chadol.jpg'},
+		{label: 'BEST', name: '기본 즉석떡볶이', en: 'CLASSIC TTEOKBOKKI', desc: '처음 온 날엔 이것부터. 떡판왕 양념 그대로의 맛.', priceNote: '2인 세트', price: 18000, from: true, image: 'images/pic_menu_classic.jpg'},
 		{label: 'TOPPING', name: '사리 & 토핑', en: 'SARI & TOPPINGS', desc: '양념만두, 피자치즈, 라면, 쫄면, 김말이튀김… 내 마음대로 판을 키운다.', priceNote: '', price: 700, from: true, image: ''},
 		{label: 'FINISH', name: '셀프볶음밥', en: 'FRIED RICE', desc: '남은 양념에 직접 볶아야 비로소 한 판이 끝난다. (200g)', priceNote: '', price: 3000, from: false, image: ''}
 	],
@@ -105,12 +105,12 @@ window.TPW_DATA = {
 
 	// 갤러리 S (type: t1 큰 정사각 / t2 가로형 / t3 세로형 / 기본 작은 정사각)
 	gallery: [
-		{type: 't1', caption: '떡볶이 클로즈업', en: 'CLOSE UP', image: ''},
-		{type: 't3', caption: '차돌박이와 토핑', en: 'CHADOL & TOPPING', image: ''},
-		{type: '', caption: '끓는 냄비', en: 'BOILING', image: ''},
-		{type: '', caption: '음식 테이블', en: 'ON THE TABLE', image: ''},
-		{type: 't2', caption: '매장 내부', en: 'INSIDE', image: ''},
-		{type: 't2', caption: '마무리 볶음밥', en: 'FINISH', image: ''}
+		{type: 't1', caption: '차돌 즉석떡볶이', en: 'CHADOL', image: 'images/pic_gallery_chadol.jpg'},
+		{type: 't3', caption: '불닭발', en: 'SPICY FEET', image: 'images/pic_gallery_dakbal.jpg'},
+		{type: '', caption: '후라이드 치킨', en: 'FRIED CHICKEN', image: 'images/pic_gallery_chicken.jpg'},
+		{type: '', caption: '치킨 & 소스', en: 'CHICKEN', image: 'images/pic_gallery_chicken2.jpg'},
+		{type: 't2', caption: '불이 붙는 맛, 불닭발', en: 'FIRE', image: 'images/pic_gallery_dakbal2.jpg'},
+		{type: 't2', caption: '저녁엔 치킨 한 판', en: 'DINNER', image: 'images/pic_gallery_chicken3.jpg'}
 	]
 	// 갤러리 E
 };
