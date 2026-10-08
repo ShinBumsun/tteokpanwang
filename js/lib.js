@@ -106,6 +106,21 @@ $(function(){
 	$('#galleryList').html(galHtml);
 	// 갤러리 렌더 E
 
+	// 모바일 높이 고정 S (주소창 노출/숨김으로 높이가 변해도 최대 높이 기준으로 고정, 가로폭이 바뀔 때만 재계산)
+	if (!(window.CSS && CSS.supports && CSS.supports('height', '100lvh'))) {
+		var vhMax = 0, vhW = window.innerWidth;
+		var setVh = function(){
+			if (window.innerWidth !== vhW) { vhW = window.innerWidth; vhMax = 0; }
+			if (window.innerHeight > vhMax) {
+				vhMax = window.innerHeight;
+				document.documentElement.style.setProperty('--vh_max', vhMax + 'px');
+			}
+		};
+		setVh();
+		$(window).on('resize orientationchange', setVh);
+	}
+	// 모바일 높이 고정 E
+
 	// 스크롤 등장 애니메이션 S
 	var $targets = $('.section, .step');
 	if (reduce || !('IntersectionObserver' in window)) {
