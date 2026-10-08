@@ -441,7 +441,7 @@ body {background-color:#FFF8EF; color:#171717; font-family:"Pretendard", -apple-
 	#header.open ~ #dock {transform:translateY(150%);}
 	#dock .d_btn {display:flex; align-items:center; justify-content:center; gap:8px; height:52px; border-radius:14px; background-color:#E92828; color:#fff; font-size:16px; font-weight:800;}
 	#dock .d_btn.t1 {background-color:#FFF8EF; color:#171717;}
-	#dock .db_pin {display:block; width:14px; height:14px; border-radius:50% 50% 50% 0; background-color:#FFD447; transform:rotate(-45deg);}
+	#dock .db_pin {display:block; flex-shrink:0; width:15px; height:19px; margin-top:-2px;}
 }
 
 @media all and (max-width:425px) {
