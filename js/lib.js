@@ -54,12 +54,15 @@ $(function(){
 	// SNS 렌더 E
 
 	// 메뉴 렌더 S
+	function won(n){
+		return Number(n).toLocaleString('ko-KR') + '원';
+	}
 	var menuHtml = '';
 	var menuLen = (D.menu || []).length;
 	$.each(D.menu || [], function(i, m){
 		// 첫 카드는 2행 차지(t1), 남는 칸이 생기면 마지막 카드를 가로형(t2)으로
 		var cls = i === 0 ? ' t1' : (i === menuLen - 1 && (menuLen - 1) % 2 === 1 ? ' t2' : '');
-		var price = m.price ? Number(m.price).toLocaleString('ko-KR') + '원' : '가격 ' + TBD;
+		var price = m.price ? (m.priceNote ? '<small>' + esc(m.priceNote) + '</small>' : '') + won(m.price) + (m.from ? '~' : '') : '가격 ' + TBD;
 		var pic = m.image
 			? '<img src="' + esc(m.image) + '" alt="' + esc(m.name) + '" loading="lazy" decoding="async">'
 			: '<div class="cmnp_ph" role="img" aria-label="' + esc(m.name) + ' 사진 준비중"><b class="font">' + esc(m.en) + '</b><span class="font">PHOTO COMING SOON</span></div>';
@@ -73,6 +76,20 @@ $(function(){
 			+ '</div></li>';
 	});
 	$('#menuList').html(menuHtml);
+
+	// 전체 메뉴판
+	var boardHtml = '';
+	$.each(D.menuBoard || [], function(i, g){
+		boardHtml += '<div class="cmb_group"><h4 class="cmbg_title font2">' + esc(g.title)
+			+ (g.note ? '<small>' + esc(g.note) + '</small>' : '') + '<span class="font">' + esc(g.en) + '</span></h4><ul class="cmbg_list">';
+		$.each(g.items, function(j, it){
+			boardHtml += '<li' + (it.best ? ' class="best"' : '') + '><span class="cmbgl_name">' + esc(it.name)
+				+ (it.sub ? '<small>' + esc(it.sub) + '</small>' : '') + '</span><i aria-hidden="true"></i><b class="cmbgl_price">'
+				+ Number(it.price).toLocaleString('ko-KR') + '</b></li>';
+		});
+		boardHtml += '</ul></div>';
+	});
+	$('#menuBoard').html(boardHtml);
 	// 메뉴 렌더 E
 
 	// 갤러리 렌더 S
