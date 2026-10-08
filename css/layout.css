@@ -167,6 +167,7 @@ body {background-color:#FFF8EF; color:#171717; font-family:"Pretendard", -apple-
 .c_menu .cmn_card:nth-child(3) .cmnp_ph b {color:#171717;}
 .c_menu .cmn_card:nth-child(3) .cmnp_ph span {background-color:#171717; color:#FFD447;}
 .c_menu .cmnp_label {position:absolute; left:20px; top:20px; padding:8px 14px; border-radius:30px; background-color:#FFD447; color:#171717; font-size:13px; letter-spacing:0.12em;}
+.c_menu .cmnp_label.t1 {font-size:15px; letter-spacing:0.02em; padding:7px 14px;}
 .c_menu .cmn_card.t1 .cmnp_label {background-color:#171717; color:#FFD447;}
 .c_menu .cmn_body {display:flex; flex-direction:column; flex:1; padding:28px 30px 32px;}
 .c_menu .cmnb_en {font-size:13px; letter-spacing:0.14em; color:#E92828; margin-bottom:10px;}

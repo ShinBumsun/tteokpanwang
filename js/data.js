@@ -50,10 +50,10 @@ window.TPW_DATA = {
 
 	// 시그니처 메뉴 S (price: 숫자, priceNote: 가격 앞 설명, from: true 면 '~' 표시)
 	menu: [
-		{label: 'SIGNATURE', name: '차돌 즉석떡볶이', en: 'CHADOL TTEOKBOKKI', desc: '차돌이 양념에 녹아드는, 떡판왕의 대표 한 판. 2인부터 4인 세트까지.', priceNote: '2인 세트', price: 20000, from: true, image: 'images/pic_menu_chadol.jpg'},
-		{label: 'BEST', name: '기본 즉석떡볶이', en: 'CLASSIC TTEOKBOKKI', desc: '처음 온 날엔 이것부터. 떡판왕 양념 그대로의 맛.', priceNote: '2인 세트', price: 18000, from: true, image: 'images/pic_menu_classic.jpg'},
-		{label: 'TOPPING', name: '사리 & 토핑', en: 'SARI & TOPPINGS', desc: '양념만두, 피자치즈, 라면, 쫄면, 김말이튀김… 내 마음대로 판을 키운다.', priceNote: '', price: 700, from: true, image: ''},
-		{label: 'FINISH', name: '셀프볶음밥', en: 'FRIED RICE', desc: '남은 양념에 직접 볶아야 비로소 한 판이 끝난다. (200g)', priceNote: '', price: 3000, from: false, image: ''}
+		{label: 'BEST', name: '차돌 즉석떡볶이', en: 'CHADOL TTEOKBOKKI', desc: '차돌이 양념에 녹아드는, 떡판왕의 대표 한 판. 2인부터 4인 세트까지.', priceNote: '2인 세트', price: 20000, from: true, image: 'images/pic_menu_chadol.jpg'},
+		{label: 'CLASSIC', name: '기본 즉석떡볶이', en: 'CLASSIC TTEOKBOKKI', desc: '처음 온 날엔 이것부터. 떡판왕 양념 그대로의 맛.', priceNote: '2인 세트', price: 18000, from: true, image: 'images/pic_menu_classic.jpg'},
+		{label: 'BEST SIDE', name: '후라이드 치킨', en: 'FRIED CHICKEN', desc: '떡볶이 한 판 옆에 치킨 한 접시. 매운맛 사이 쉬어가는 맛.', priceNote: '저녁', price: 20000, from: false, image: 'images/pic_menu_chicken.jpg'},
+		{label: 'BEST 안주', name: '불닭발', en: 'SPICY CHICKEN FEET', desc: '한 잔 곁들이는 저녁, 매운맛으로 끝까지 달리는 안주.', priceNote: '저녁', price: 19000, from: false, image: 'images/pic_menu_dakbal.jpg'}
 	],
 	// 시그니처 메뉴 E
 
@@ -85,8 +85,8 @@ window.TPW_DATA = {
 			{name: '셀프주먹밥', sub: '200g', price: 3500}
 		]},
 		{title: '안주류', en: 'DINNER ONLY', note: '저녁', items: [
-			{name: '후라이드 치킨', price: 20000},
-			{name: '불닭발', price: 19000},
+			{name: '후라이드 치킨', price: 20000, best: true},
+			{name: '불닭발', price: 19000, best: true},
 			{name: '주전자 꼬치어묵', sub: '6EA', price: 12000},
 			{name: '감자튀김', price: 15000},
 			{name: '쥐포와 땅콩', price: 15000},
