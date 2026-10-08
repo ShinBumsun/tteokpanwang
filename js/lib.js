@@ -70,7 +70,7 @@ $(function(){
 			? '<img src="' + esc(m.image) + '" alt="' + esc(m.name) + '" loading="lazy" decoding="async">'
 			: '<div class="cmnp_ph" role="img" aria-label="' + esc(m.name) + ' 사진 준비중"><b class="font">' + esc(m.en) + '</b><span class="font">PHOTO COMING SOON</span></div>';
 		menuHtml += '<li class="cmn_card' + cls + '">'
-			+ '<div class="cmn_pic">' + pic + '<em class="cmnp_label font">' + esc(m.label) + '</em></div>'
+			+ '<div class="cmn_pic">' + pic + '<em class="cmnp_label ' + (/[가-힣]/.test(m.label) ? 'font2 t1' : 'font') + '">' + esc(m.label) + '</em></div>'
 			+ '<div class="cmn_body">'
 			+ '<span class="cmnb_en font">' + esc(m.en) + '</span>'
 			+ '<strong class="cmnb_name font2">' + esc(m.name) + '</strong>'
