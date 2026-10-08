@@ -106,11 +106,11 @@ window.TPW_DATA = {
 	// 갤러리 S (type: t1 큰 정사각 / t2 가로형 / t3 세로형 / 기본 작은 정사각)
 	gallery: [
 		{type: 't1', caption: '차돌 즉석떡볶이', en: 'CHADOL', image: 'images/pic_gallery_chadol.jpg'},
-		{type: 't3', caption: '불닭발', en: 'SPICY FEET', image: 'images/pic_gallery_dakbal.jpg'},
-		{type: '', caption: '후라이드 치킨', en: 'FRIED CHICKEN', image: 'images/pic_gallery_chicken.jpg'},
-		{type: '', caption: '치킨 & 소스', en: 'CHICKEN', image: 'images/pic_gallery_chicken2.jpg'},
-		{type: 't2', caption: '불이 붙는 맛, 불닭발', en: 'FIRE', image: 'images/pic_gallery_dakbal2.jpg'},
-		{type: 't2', caption: '저녁엔 치킨 한 판', en: 'DINNER', image: 'images/pic_gallery_chicken3.jpg'}
+		{type: 't3', caption: '매장 내부', en: 'INSIDE', image: 'images/pic_gallery_store.jpg'},
+		{type: '', caption: '즉석떡볶이', en: 'TTEOKBOKKI', image: 'images/pic_gallery_tteokbokki.jpg'},
+		{type: '', caption: '불닭발', en: 'SPICY FEET', image: 'images/pic_gallery_dakbal.jpg'},
+		{type: 't2', caption: '한 판씩, 테이블마다', en: 'TABLE', image: 'images/pic_gallery_store2.jpg'},
+		{type: 't2', caption: '후라이드 치킨', en: 'FRIED CHICKEN', image: 'images/pic_gallery_chicken3.jpg'}
 	]
 	// 갤러리 E
 };
