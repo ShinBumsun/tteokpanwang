@@ -54,6 +54,11 @@
 .btn.t3:hover {background-color:#fff;}
 .btn.t4 {background-color:#FEE500; color:#171717;}
 .btn.t4:hover {background-color:#fff;}
+.btn.t5 {background-image:linear-gradient(45deg, #E92828 0, #A62BB8 100%); color:#fff;}
+.btn.t5:hover {background-image:none; background-color:#fff; color:#171717;}
+.btn .b_insta {position:relative; width:18px; height:18px; border:2px solid currentColor; border-radius:5px;}
+.btn .b_insta::before {content:""; position:absolute; left:50%; top:50%; width:8px; height:8px; margin:-4px 0 0 -4px; border:2px solid currentColor; border-radius:50%; box-sizing:border-box;}
+.btn .b_insta::after {content:""; position:absolute; right:1px; top:1px; width:3px; height:3px; border-radius:50%; background-color:currentColor;}
 .btn .b_arrow {display:inline-block; width:18px; height:2px; background-color:currentColor; position:relative; transition:width 0.3s;}
 .btn .b_arrow::after {content:""; position:absolute; right:0; top:-4px; width:8px; height:8px; border-top:2px solid currentColor; border-right:2px solid currentColor; transform:rotate(45deg);}
 .btn:hover .b_arrow {width:26px;}
@@ -249,7 +254,8 @@ body {background-color:#FFF8EF; color:#171717; font-family:"Pretendard", -apple-
 .c_loc .clci_row dd {font-size:18px; font-weight:700; line-height:1.45;}
 .c_loc .clci_row dd small {display:block; margin-top:4px; font-size:14px; font-weight:500; color:rgba(255,255,255,0.55);}
 .c_loc .clci_row dd a {text-decoration:underline; text-underline-offset:4px;}
-.c_loc .clcc_btns {display:grid; grid-template-columns:1fr 1fr auto; gap:10px; margin-top:auto;}
+.c_loc .clcc_btns {display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:auto;}
+.c_loc .clcc_btns .btn:last-child:nth-child(odd) {grid-column:span 2;}
 .c_loc .clcc_btns .btn {height:54px; padding:0 18px; font-size:16px;}
 /* Location E */
 
@@ -265,6 +271,7 @@ body {background-color:#FFF8EF; color:#171717; font-family:"Pretendard", -apple-
 #footer .ftb_sns {display:flex; gap:20px;}
 #footer .ftb_sns a, #footer .ftb_sns span {font-size:15px; letter-spacing:0.12em;}
 #footer .ftb_sns a:hover {color:#fff;}
+#footer .ftb_sns a span {font-family:"Pretendard", sans-serif; font-weight:700; letter-spacing:0; text-transform:none;}
 #footer .ftb_copyright {width:100%; font-size:13px; letter-spacing:0.12em; opacity:0.8;}
 /* Footer E */
 
@@ -293,8 +300,6 @@ body {background-color:#FFF8EF; color:#171717; font-family:"Pretendard", -apple-
 	.c_menu, .c_loc {padding:140px 0;}
 	.c_exp {padding:150px 0;}
 	.c_exp .cex_row {gap:70px;}
-	.c_loc .clcc_btns {grid-template-columns:1fr 1fr;}
-	.c_loc .clcc_btns .btn.t2 {grid-column:span 2;}
 }
 
 @media all and (max-width:1280px) {
@@ -439,8 +444,6 @@ body {background-color:#FFF8EF; color:#171717; font-family:"Pretendard", -apple-
 	.c_hero .ch_btns .btn {min-width:0;}
 	.c_menu .cmn_card, .c_menu .cmn_card.t1, .c_menu .cmn_card.t2 {flex-basis:86%;}
 	.c_gallery .cgl_grid {grid-auto-rows:120px;}
-	.c_loc .clcc_btns {grid-template-columns:1fr 1fr;}
-	.c_loc .clcc_btns .btn.t2 {grid-column:span 2;}
 }
 @keyframes hint {0%, 100% {transform:translateX(0);} 50% {transform:translateX(8px);}}
 /* Responsive E */

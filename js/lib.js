@@ -35,7 +35,9 @@ $(function(){
 			+ '<a href="' + esc(naver) + '" class="btn t3" target="_blank" rel="noopener" title="Map_' + esc(st.name) + ' 네이버 지도 새창">네이버 지도</a>'
 			+ '<a href="' + esc(kakao) + '" class="btn t4" target="_blank" rel="noopener" title="Map_' + esc(st.name) + ' 카카오맵 새창">카카오맵</a>'
 			+ (st.tel ? '<a href="tel:' + esc(st.tel.replace(/[^0-9+]/g, '')) + '" class="btn t2" title="Call_' + esc(st.name) + ' 전화하기">전화</a>' : '')
-			+ '</div></li>';
+			+ (st.instagram ? '<a href="' + esc(st.instagram) + '" class="btn t5" target="_blank" rel="noopener" title="SNS_' + esc(st.name) + ' 인스타그램 새창"><i class="b_insta" aria-hidden="true"></i>인스타그램</a>' : '')
+			+ '</div>'
+			+ '</li>';
 		footHtml += '<li><strong>' + esc(st.name) + '</strong><span>' + esc(st.address || '') + '</span>' + telLink(st.tel) + '</li>';
 	});
 	$('#storeList').html(storeHtml);
@@ -45,11 +47,12 @@ $(function(){
 
 	// SNS 렌더 S
 	var sns = [['instagram', 'INSTAGRAM'], ['youtube', 'YOUTUBE']];
+	// 주소가 있는 SNS 만 노출
 	$.each(sns, function(i, s){
 		var url = B[s[0]];
-		$('#snsList').append(url
-			? '<li><a href="' + esc(url) + '" target="_blank" rel="noopener" class="font" title="SNS_' + s[1] + ' 새창">' + s[1] + '</a></li>'
-			: '<li><span class="font is_tbd" title="' + s[1] + ' 계정 준비중">' + s[1] + '</span></li>');
+		if (!url) return;
+		var id = (url.match(/instagram\.com\/([^\/?#]+)/) || [])[1];
+		$('#snsList').append('<li><a href="' + esc(url) + '" target="_blank" rel="noopener" class="font" title="SNS_' + s[1] + ' 새창">' + s[1] + (id ? ' <span>@' + esc(id) + '</span>' : '') + '</a></li>');
 	});
 	// SNS 렌더 E
 

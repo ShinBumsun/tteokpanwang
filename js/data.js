@@ -7,7 +7,7 @@
 window.TPW_DATA = {
 	// 브랜드 공통 S
 	brand: {
-		instagram: '',
+		instagram: 'https://www.instagram.com/dpw_guui/',
 		youtube: ''
 	},
 	// 브랜드 공통 E
@@ -42,7 +42,8 @@ window.TPW_DATA = {
 			address: '서울 광진구 아차산로51길 11 2층',
 			jibun: '구의동 246-59',
 			hours: '22:30 영업 종료',
-			tel: '0507-1341-4735'
+			tel: '0507-1341-4735',
+			instagram: 'https://www.instagram.com/dpw_guui/'
 		}
 	],
 	// 매장 목록 E
