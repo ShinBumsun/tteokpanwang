@@ -217,20 +217,23 @@ body {background-color:#FFF8EF; color:#171717; font-family:"Pretendard", -apple-
 /* Location S */
 .c_loc {padding:160px 0; background-color:#171717; color:#fff;}
 .c_loc .clc_head {margin-bottom:72px;}
-.c_loc .clc_box {display:grid; grid-template-columns:1fr 1.1fr; gap:40px; align-items:stretch;}
-.c_loc .clc_info {display:flex; flex-direction:column; border-top:1px solid rgba(255,255,255,0.2);}
-.c_loc .clci_row {display:grid; grid-template-columns:140px 1fr; align-items:center; gap:20px; padding:26px 0; border-bottom:1px solid rgba(255,255,255,0.2);}
-.c_loc .clci_row dt {font-size:15px; letter-spacing:0.16em; color:#FFD447;}
-.c_loc .clci_row dd {font-size:22px; font-weight:700;}
+.c_loc .clc_list {display:grid; grid-template-columns:repeat(2, 1fr); gap:24px;}
+.c_loc .clc_card {display:flex; flex-direction:column; padding:40px; border-radius:32px; background-color:#222; border:1px solid rgba(255,255,255,0.08); transition:border-color 0.4s, transform 0.4s;}
+.c_loc .clc_card:hover {border-color:#E92828; transform:translateY(-6px);}
+.c_loc .clcc_top {display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:12px; margin-bottom:22px;}
+.c_loc .clcc_badge {padding:8px 14px; border-radius:30px; background-color:#E92828; color:#fff; font-size:14px; letter-spacing:0.14em;}
+.c_loc .clc_card:nth-child(2) .clcc_badge {background-color:#FFD447; color:#171717;}
+.c_loc .clcc_station {display:inline-flex; align-items:center; gap:8px; font-size:15px; font-weight:700; color:rgba(255,255,255,0.8);}
+.c_loc .clcc_station b {display:inline-flex; align-items:center; justify-content:center; min-width:26px; height:26px; padding:0 7px; border-radius:13px; background-color:#3CB44A; color:#fff; font-size:13px; font-weight:400;}
+.c_loc .clcc_name {font-size:clamp(32px, 3vw, 46px); line-height:1.1; margin-bottom:28px;}
+.c_loc .clc_info {display:flex; flex-direction:column; border-top:1px solid rgba(255,255,255,0.2); margin-bottom:32px;}
+.c_loc .clci_row {display:grid; grid-template-columns:110px 1fr; align-items:baseline; gap:16px; padding:20px 0; border-bottom:1px solid rgba(255,255,255,0.2);}
+.c_loc .clci_row dt {font-size:14px; letter-spacing:0.16em; color:#FFD447;}
+.c_loc .clci_row dd {font-size:19px; font-weight:700; line-height:1.45;}
+.c_loc .clci_row dd small {display:block; margin-top:4px; font-size:14px; font-weight:500; color:rgba(255,255,255,0.55);}
 .c_loc .clci_row dd a {text-decoration:underline; text-underline-offset:4px;}
-.c_loc .clc_map {position:relative; display:flex; flex-direction:column; justify-content:flex-end; min-height:420px; padding:32px; border-radius:32px; overflow:hidden; background-color:#E92828; background-image:linear-gradient(rgba(255,255,255,0.12) 2px, rgba(0,0,0,0) 2px), linear-gradient(90deg, rgba(255,255,255,0.12) 2px, rgba(0,0,0,0) 2px), linear-gradient(28deg, rgba(0,0,0,0) 48%, rgba(23,23,23,0.35) 48%, rgba(23,23,23,0.35) 52%, rgba(0,0,0,0) 52%); background-size:64px 64px, 64px 64px, 100% 100%;}
-.c_loc .clcm_pin {position:absolute; left:50%; top:38%; display:flex; flex-direction:column; align-items:center; gap:10px; transform:translate(-50%,-50%);}
-.c_loc .clcm_pin i {display:block; width:56px; height:56px; background-color:#FFD447; border-radius:50% 50% 50% 0; transform:rotate(-45deg); box-shadow:0 10px 30px rgba(0,0,0,0.3); animation:pin 1.8s ease-in-out infinite;}
-.c_loc .clcm_pin i::after {content:""; position:absolute; left:50%; top:50%; width:18px; height:18px; margin:-9px 0 0 -9px; border-radius:50%; background-color:#171717;}
-.c_loc .clcm_pin span {padding:8px 16px; border-radius:30px; background-color:#171717; font-size:20px;}
-.c_loc .clcm_station {position:absolute; left:32px; top:32px; display:flex; align-items:center; gap:10px; font-size:16px; letter-spacing:0.12em;}
-.c_loc .clcm_station b {display:inline-flex; align-items:center; justify-content:center; width:28px; height:28px; border-radius:50%; background-color:#3CB44A; color:#fff; font-size:15px;}
-.c_loc .clcm_btns {position:relative; display:grid; grid-template-columns:1fr 1fr; gap:12px;}
+.c_loc .clcc_btns {display:grid; grid-template-columns:1fr 1fr auto; gap:10px; margin-top:auto;}
+.c_loc .clcc_btns .btn {height:54px; padding:0 18px; font-size:16px;}
 /* Location E */
 
 /* Footer S */
@@ -238,7 +241,10 @@ body {background-color:#FFF8EF; color:#171717; font-family:"Pretendard", -apple-
 #footer .ft_copy {font-size:clamp(28px, 3vw, 48px); line-height:1.2;}
 #footer .ft_logo {display:block; margin:20px 0 60px; font-size:clamp(120px, 22vw, 400px); line-height:0.9; color:#fff; letter-spacing:-0.03em;}
 #footer .ft_bottom {display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:20px; padding-top:28px; border-top:2px solid #171717;}
-#footer .ftb_info {display:flex; flex-wrap:wrap; gap:6px 24px; font-weight:700;}
+#footer .ftbi_list {display:flex; flex-direction:column; gap:6px;}
+#footer .ftbi_list li {display:flex; flex-wrap:wrap; gap:4px 16px;}
+#footer .ftbi_list strong {font-weight:800;}
+#footer .ftbi_list a:hover {color:#fff;}
 #footer .ftb_sns {display:flex; gap:20px;}
 #footer .ftb_sns a, #footer .ftb_sns span {font-size:15px; letter-spacing:0.12em;}
 #footer .ftb_sns a:hover {color:#fff;}
@@ -256,7 +262,6 @@ body {background-color:#FFF8EF; color:#171717; font-family:"Pretendard", -apple-
 @keyframes scrollline {0% {transform:scaleY(0);} 50% {transform:scaleY(1);} 100% {transform:scaleY(1); opacity:0;}}
 @keyframes marquee {from {transform:translateX(0);} to {transform:translateX(-50%);}}
 @keyframes bubble {0% {transform:translateY(0) scale(0.6); opacity:0;} 20% {opacity:0.9;} 100% {transform:translateY(-360px) scale(1.1); opacity:0;}}
-@keyframes pin {0%, 100% {transform:rotate(-45deg) translate(0,0);} 50% {transform:rotate(-45deg) translate(6px,-6px);}}
 @media (prefers-reduced-motion:reduce) {*, *::before, *::after {animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important;} .fade {opacity:1; transform:none;}}
 /* Keyframes E */
 
@@ -287,7 +292,8 @@ body {background-color:#FFF8EF; color:#171717; font-family:"Pretendard", -apple-
 	.c_exp .cex_row {gap:56px;}
 	.c_exp .cex_list {gap:100px;}
 	.c_gallery .cgl_grid {grid-auto-rows:200px;}
-	.c_loc .clci_row dd {font-size:20px;}
+	.c_loc .clc_card {padding:32px;}
+	.c_loc .clci_row dd {font-size:17px;}
 }
 
 @media all and (max-width:1024px) {
@@ -318,7 +324,7 @@ body {background-color:#FFF8EF; color:#171717; font-family:"Pretendard", -apple-
 	.c_exp .cex_row {grid-template-columns:1fr 1fr; gap:40px;}
 	.c_exp .cexr_visual {padding:28px; border-radius:28px;}
 	.c_gallery .cgl_grid {grid-auto-rows:170px;}
-	.c_loc .clc_box {grid-template-columns:1fr;}
+	.c_loc .clc_list {grid-template-columns:1fr;}
 }
 
 @media all and (max-width:768px) {
@@ -379,12 +385,15 @@ body {background-color:#FFF8EF; color:#171717; font-family:"Pretendard", -apple-
 	.c_gallery .cgli_cap {left:10px; bottom:10px; padding:6px 10px; font-size:12px;}
 	.c_loc {padding:100px 0;}
 	.c_loc .clc_head {margin-bottom:40px;}
-	.c_loc .clci_row {grid-template-columns:90px 1fr; padding:20px 0;}
-	.c_loc .clci_row dt {font-size:13px;}
-	.c_loc .clci_row dd {font-size:17px;}
-	.c_loc .clc_map {min-height:340px; padding:20px; border-radius:24px;}
-	.c_loc .clcm_station {left:20px; top:20px; font-size:13px;}
-	.c_loc .clcm_btns .btn {padding:0 12px;}
+	.c_loc .clc_list {gap:14px;}
+	.c_loc .clc_card {padding:26px 20px; border-radius:24px;}
+	.c_loc .clcc_name {margin-bottom:20px;}
+	.c_loc .clci_row {grid-template-columns:80px 1fr; gap:12px; padding:16px 0;}
+	.c_loc .clci_row dt {font-size:12px;}
+	.c_loc .clci_row dd {font-size:16px;}
+	.c_loc .clci_row dd small {font-size:13px;}
+	.c_loc .clc_info {margin-bottom:24px;}
+	.c_loc .clcc_btns .btn {height:50px; padding:0 12px; font-size:15px;}
 	#footer {padding:80px 0 120px;}
 	#footer .ft_logo {margin:14px 0 40px; font-size:30vw;}
 	#footer .ft_bottom {flex-direction:column; align-items:flex-start;}
@@ -401,7 +410,8 @@ body {background-color:#FFF8EF; color:#171717; font-family:"Pretendard", -apple-
 	.c_hero .ch_btns .btn {min-width:0;}
 	.c_menu .cmn_card, .c_menu .cmn_card.t1, .c_menu .cmn_card.t2 {flex-basis:86%;}
 	.c_gallery .cgl_grid {grid-auto-rows:120px;}
-	.c_loc .clcm_btns {grid-template-columns:1fr;}
+	.c_loc .clcc_btns {grid-template-columns:1fr 1fr;}
+	.c_loc .clcc_btns .btn.t2 {grid-column:span 2;}
 }
 @keyframes hint {0%, 100% {transform:translateX(0);} 50% {transform:translateX(8px);}}
 /* Responsive E */

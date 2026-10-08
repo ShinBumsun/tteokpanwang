@@ -14,7 +14,8 @@ images/           실제 사진 보관 위치
 
 ## 콘텐츠 수정
 `js/data.js` 에서
-- `store.address / hours / tel / instagram` 입력 → 비어 있으면 '추후 공지' 표시
+- `stores[]` 매장 목록 (이름·주소·지번·영업시간·전화) — 항목 추가 시 카드 자동 생성
+- `brand.instagram / youtube` SNS 주소
 - `menu[].price` 숫자 입력 (예: `16000`) → `16,000원`
 - `menu[].image`, `gallery[].image` 에 `images/pic_menu_chadol.jpg` 처럼 경로 입력 → 플레이스홀더 대신 사진 노출 (lazy loading)
 

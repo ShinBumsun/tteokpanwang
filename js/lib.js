@@ -1,6 +1,6 @@
 $(function(){
 	var D = window.TPW_DATA || {};
-	var S = D.store || {};
+	var B = D.brand || {};
 	var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 	var TBD = '추후 공지';
 
@@ -8,28 +8,45 @@ $(function(){
 		return $('<div>').text(v == null ? '' : v).html();
 	}
 
-	// 매장 정보 바인딩 S
-	$('[data-store]').each(function(){
-		var key = $(this).data('store');
-		var val = S[key];
-		if (key === 'tel' && val) {
-			$(this).html('<a href="tel:' + esc(val.replace(/[^0-9+]/g, '')) + '">' + esc(val) + '</a>');
-		} else if (val) {
-			$(this).text(val);
-		} else {
-			$(this).addClass('is_tbd').text(TBD);
-		}
+	// 매장 렌더 S
+	function row(dt, val){
+		return '<div class="clci_row"><dt class="font">' + dt + '</dt><dd' + (val ? '' : ' class="is_tbd"') + '>' + (val || TBD) + '</dd></div>';
+	}
+	function telLink(t){
+		return t ? '<a href="tel:' + esc(t.replace(/[^0-9+]/g, '')) + '">' + esc(t) + '</a>' : '';
+	}
+	var storeHtml = '', footHtml = '';
+	$.each(D.stores || [], function(i, st){
+		var q = encodeURIComponent(st.address ? st.address.replace(/\s*(지하)?\d*층$/, '') + ' 떡판왕' : st.name);
+		var naver = st.naverMap || 'https://map.naver.com/p/search/' + q;
+		var kakao = st.kakaoMap || 'https://map.kakao.com/link/search/' + q;
+		storeHtml += '<li class="clc_card fade f_up' + (i ? ' f_delay03' : '') + '">'
+			+ '<div class="clcc_top">'
+			+ '<em class="clcc_badge font">' + esc(st.badge) + '</em>'
+			+ (st.station ? '<span class="clcc_station">' + (st.line ? '<b class="font">' + esc(st.line) + '</b>' : '') + esc(st.station) + '</span>' : '')
+			+ '</div>'
+			+ '<strong class="clcc_name font2">' + esc(st.name) + '</strong>'
+			+ '<dl class="clc_info">'
+			+ row('ADDRESS', st.address ? esc(st.address) + (st.jibun ? '<small>지번 ' + esc(st.jibun) + '</small>' : '') : '')
+			+ row('HOURS', esc(st.hours))
+			+ row('TEL', telLink(st.tel))
+			+ '</dl>'
+			+ '<div class="clcc_btns">'
+			+ '<a href="' + esc(naver) + '" class="btn t3" target="_blank" rel="noopener" title="Map_' + esc(st.name) + ' 네이버 지도 새창">네이버 지도</a>'
+			+ '<a href="' + esc(kakao) + '" class="btn t4" target="_blank" rel="noopener" title="Map_' + esc(st.name) + ' 카카오맵 새창">카카오맵</a>'
+			+ (st.tel ? '<a href="tel:' + esc(st.tel.replace(/[^0-9+]/g, '')) + '" class="btn t2" title="Call_' + esc(st.name) + ' 전화하기">전화</a>' : '')
+			+ '</div></li>';
+		footHtml += '<li><strong>' + esc(st.name) + '</strong><span>' + esc(st.address || '') + '</span>' + telLink(st.tel) + '</li>';
 	});
-	$('#footer [data-store].is_tbd').remove();
-	$('.js_naver').attr('href', S.naverMap);
-	$('.js_kakao').attr('href', S.kakaoMap);
+	$('#storeList').html(storeHtml);
+	$('#footerStores').html(footHtml);
 	$('.js_year').text(new Date().getFullYear());
 	// 매장 정보 바인딩 E
 
 	// SNS 렌더 S
 	var sns = [['instagram', 'INSTAGRAM'], ['youtube', 'YOUTUBE']];
 	$.each(sns, function(i, s){
-		var url = S[s[0]];
+		var url = B[s[0]];
 		$('#snsList').append(url
 			? '<li><a href="' + esc(url) + '" target="_blank" rel="noopener" class="font" title="SNS_' + s[1] + ' 새창">' + s[1] + '</a></li>'
 			: '<li><span class="font is_tbd" title="' + s[1] + ' 계정 준비중">' + s[1] + '</span></li>');

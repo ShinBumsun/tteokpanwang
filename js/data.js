@@ -5,19 +5,37 @@
 	- image: 'images/pic_menu_chadol.jpg' 처럼 경로를 넣으면 플레이스홀더 대신 사진이 노출됩니다.
 ========================================================= */
 window.TPW_DATA = {
-	// 매장 정보 S
-	store: {
-		name: '떡판왕',
-		area: '서울 선릉역 인근',
-		address: '',
-		hours: '',
-		tel: '',
-		naverMap: 'https://map.naver.com/p/search/' + encodeURIComponent('선릉역 떡판왕'),
-		kakaoMap: 'https://map.kakao.com/link/search/' + encodeURIComponent('선릉역 떡판왕'),
+	// 브랜드 공통 S
+	brand: {
 		instagram: '',
 		youtube: ''
 	},
-	// 매장 정보 E
+	// 브랜드 공통 E
+
+	// 매장 목록 S (네이버 지도 기준, 2026.10 확인)
+	stores: [
+		{
+			name: '떡판왕',
+			badge: 'SEOLLEUNG',
+			station: '선릉역',
+			line: '2',
+			address: '서울 강남구 테헤란로 423 지하1층',
+			jibun: '삼성동 143-37',
+			hours: '라스트오더 20:50',
+			tel: '02-564-2120'
+		},
+		{
+			name: '떡판왕 을지로3가점',
+			badge: 'EULJIRO 3-GA',
+			station: '을지로3가역',
+			line: '2·3',
+			address: '서울 중구 수표로10길 19 2층',
+			jibun: '초동 156-9',
+			hours: '22:00 영업 종료',
+			tel: '0507-1381-8824'
+		}
+	],
+	// 매장 목록 E
 
 	// 시그니처 메뉴 S
 	menu: [
