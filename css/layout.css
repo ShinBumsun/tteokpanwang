@@ -208,12 +208,13 @@ body {background-color:#FFF8EF; color:#171717; font-family:"Pretendard", -apple-
 .c_exp .cexr_visual.t1 {background-color:#E92828; color:#fff; background-image:radial-gradient(circle at 80% 80%, #FFD447 0, rgba(255,212,71,0) 35%);}
 .c_exp .cexr_visual.t2 {background-color:#171717; color:#E92828;}
 .c_exp .cexr_visual.t3 {background-color:#FFD447; color:#171717; background-image:radial-gradient(circle at 20% 90%, #E92828 0, rgba(233,40,40,0) 40%);}
-.c_exp .cexv_bubble {position:absolute; bottom:-40px; width:40px; aspect-ratio:1/1; border-radius:50%; border:3px solid #E92828; opacity:0.8; animation:bubble 3.2s ease-in infinite;}
-.c_exp .cexv_bubble:nth-of-type(1) {left:18%; animation-delay:0s;}
-.c_exp .cexv_bubble:nth-of-type(2) {left:38%; width:24px; animation-delay:0.9s;}
-.c_exp .cexv_bubble:nth-of-type(3) {left:58%; width:56px; animation-delay:1.6s;}
-.c_exp .cexv_bubble:nth-of-type(4) {left:74%; width:30px; animation-delay:0.4s;}
-.c_exp .cexv_bubble:nth-of-type(5) {left:86%; width:18px; animation-delay:2.2s;}
+.c_exp .cexr_visual b, .c_exp .cexr_visual span {position:relative; z-index:2;}
+.c_exp .cexr_visual span {position:absolute; right:40px; top:44px;}
+.c_exp .cexv_art {position:absolute; z-index:1; overflow:visible; filter:drop-shadow(0 24px 30px rgba(0,0,0,0.3)); transition:transform 1.4s cubic-bezier(.2,.7,.2,1);}
+.c_exp .cexv_art.t1, .c_exp .cexv_art.t3 {right:-6%; bottom:-16%; width:66%;}
+.c_exp .cexv_art.t2 {right:3%; bottom:2%; width:76%;}
+.c_exp .cex_row:not(.on) .cexv_art {transform:translateY(40px) rotate(-8deg);}
+.c_exp .cexv_art.t1 {animation:artSpin 60s linear infinite;}
 .c_exp .cexr_txt em {display:block; font-size:18px; letter-spacing:0.18em; margin-bottom:20px;}
 .c_exp .cexr_txt strong {display:block; font-size:clamp(34px, 3.4vw, 56px); line-height:1.15; margin-bottom:24px;}
 .c_exp .cexr_txt .txt {color:rgba(23,23,23,0.75); max-width:440px;}
@@ -288,7 +289,7 @@ body {background-color:#FFF8EF; color:#171717; font-family:"Pretendard", -apple-
 @keyframes flip {0%, 70% {transform:rotateX(0);} 85%, 100% {transform:rotateX(360deg);}}
 @keyframes scrollline {0% {transform:scaleY(0);} 50% {transform:scaleY(1);} 100% {transform:scaleY(1); opacity:0;}}
 @keyframes marquee {from {transform:translateX(0);} to {transform:translateX(-50%);}}
-@keyframes bubble {0% {transform:translateY(0) scale(0.6); opacity:0;} 20% {opacity:0.9;} 100% {transform:translateY(-360px) scale(1.1); opacity:0;}}
+@keyframes artSpin {from {rotate:0deg;} to {rotate:360deg;}}
 @media (prefers-reduced-motion:reduce) {*, *::before, *::after {animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important;} .fade {opacity:1; transform:none;}}
 /* Keyframes E */
 
@@ -353,6 +354,7 @@ body {background-color:#FFF8EF; color:#171717; font-family:"Pretendard", -apple-
 	.c_menu .cmn_card.t1 .cmn_pic {min-height:0; aspect-ratio:16/9; flex:none;}
 	.c_exp .cex_row {grid-template-columns:1fr 1fr; gap:40px;}
 	.c_exp .cexr_visual {padding:28px; border-radius:28px;}
+	.c_exp .cexr_visual span {right:28px; top:32px;}
 	.c_gallery .cgl_grid {grid-auto-rows:170px;}
 	.c_loc .clc_list {grid-template-columns:1fr;}
 	.c_menu .cmb_cols {column-count:2;}
@@ -408,7 +410,7 @@ body {background-color:#FFF8EF; color:#171717; font-family:"Pretendard", -apple-
 	.c_exp .cex_row {grid-template-columns:1fr; gap:28px;}
 	.c_exp .cex_row.t2 .cexr_visual {order:0;}
 	.c_exp .cexr_visual {aspect-ratio:4/3; border-radius:24px; padding:24px;}
-	.c_exp .cexr_visual span {font-size:16px;}
+	.c_exp .cexr_visual span {font-size:16px; right:24px; top:28px;}
 	.c_exp .cexr_txt em {font-size:14px; margin-bottom:12px;}
 	.c_exp .cexr_txt strong {font-size:30px; margin-bottom:14px;}
 	.c_gallery {padding:20px 0 110px;}
