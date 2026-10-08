@@ -211,10 +211,9 @@ body {background-color:#FFF8EF; color:#171717; font-family:"Pretendard", -apple-
 .c_exp .cexr_visual b, .c_exp .cexr_visual span {position:relative; z-index:2;}
 .c_exp .cexr_visual span {position:absolute; right:40px; top:44px;}
 .c_exp .cexv_art {position:absolute; z-index:1; overflow:visible; filter:drop-shadow(0 24px 30px rgba(0,0,0,0.3)); transition:transform 1.4s cubic-bezier(.2,.7,.2,1);}
-.c_exp .cexv_art.t1, .c_exp .cexv_art.t3 {right:-6%; bottom:-16%; width:66%;}
-.c_exp .cexv_art.t2 {right:3%; bottom:2%; width:76%;}
+.c_exp .cexv_art.t1, .c_exp .cexv_art.t3 {right:-6%; bottom:-16%; width:66%; height:auto; aspect-ratio:1/1;}
+.c_exp .cexv_art.t2 {right:3%; bottom:2%; width:76%; height:auto; aspect-ratio:420/300;}
 .c_exp .cex_row:not(.on) .cexv_art {transform:translateY(40px) rotate(-8deg);}
-.c_exp .cexv_art.t1 {animation:artSpin 60s linear infinite;}
 .c_exp .cexr_txt em {display:block; font-size:18px; letter-spacing:0.18em; margin-bottom:20px;}
 .c_exp .cexr_txt strong {display:block; font-size:clamp(34px, 3.4vw, 56px); line-height:1.15; margin-bottom:24px;}
 .c_exp .cexr_txt .txt {color:rgba(23,23,23,0.75); max-width:440px;}
@@ -289,7 +288,6 @@ body {background-color:#FFF8EF; color:#171717; font-family:"Pretendard", -apple-
 @keyframes flip {0%, 70% {transform:rotateX(0);} 85%, 100% {transform:rotateX(360deg);}}
 @keyframes scrollline {0% {transform:scaleY(0);} 50% {transform:scaleY(1);} 100% {transform:scaleY(1); opacity:0;}}
 @keyframes marquee {from {transform:translateX(0);} to {transform:translateX(-50%);}}
-@keyframes artSpin {from {rotate:0deg;} to {rotate:360deg;}}
 @media (prefers-reduced-motion:reduce) {*, *::before, *::after {animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important;} .fade {opacity:1; transform:none;}}
 /* Keyframes E */
 
