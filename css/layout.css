@@ -66,6 +66,7 @@
 
 /* Common S */
 body {background-color:#FFF8EF; color:#171717; font-family:"Pretendard", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", sans-serif; overflow-x:hidden;}
+#contents {overflow-x:hidden; overflow-x:clip;}
 .section {position:relative;}
 .c_wrap {position:relative; width:100%; max-width:1440px; margin:0 auto; padding:0 60px;}
 .c_label {display:inline-block; font-size:16px; letter-spacing:0.12em; color:#E92828; margin-bottom:24px;}
@@ -397,7 +398,8 @@ body {background-color:#FFF8EF; color:#171717; font-family:"Pretendard", -apple-
 	.c_menu .cmn_list::-webkit-scrollbar {display:none;}
 	.c_menu .cmn_card, .c_menu .cmn_card.t1, .c_menu .cmn_card.t2 {flex:0 0 80%; scroll-snap-align:start; border-radius:22px;}
 	.c_menu .cmn_card:hover {transform:none; box-shadow:none;}
-	.c_menu .cmn_card.t1 .cmn_pic, .c_menu .cmn_card.t2 .cmn_pic {aspect-ratio:4/3;}
+	.c_menu .cmn_card.t2 {flex-direction:column;}
+	.c_menu .cmn_card.t1 .cmn_pic, .c_menu .cmn_card.t2 .cmn_pic {flex:none; aspect-ratio:4/3;}
 	.c_menu .cmn_body {padding:22px 22px 26px;}
 	.c_menu .cmnb_name, .c_menu .cmn_card.t1 .cmnb_name {font-size:26px;}
 	.c_menu .cmn_hint {display:flex; align-items:center; justify-content:flex-end; gap:10px; margin-top:20px; font-size:12px; letter-spacing:0.2em; color:rgba(255,255,255,0.5);}
